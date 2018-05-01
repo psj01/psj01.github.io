@@ -1,0 +1,129 @@
+/*---------------------------------------------*/
+/*Basic set up*/
+/*---------------------------------------------*/
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    background-color: #fff;
+    color:#bff5f5;
+    font-family: 'Lato','Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x:hidden;    
+}
+
+/*---------------------------------------------*/
+/*Reusable components*/
+/*---------------------------------------------*/
+.row {
+    max-width: 1140px;
+    margin:0 auto 0 auto;
+}
+
+
+/* WELCOME SCREEN */
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50),rgba(0, 0, 0, 0.5)),url("img/usa2.gif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.test-section{
+    background-image: linear-gradient(rgba(255, 255, 255, 075),rgba(255, 255, 255, 0.5)), url("img/usa1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.welcome-screen{
+    margin:20% auto 50% auto;
+    text-align: center;
+    
+}
+.button{
+    padding:5px;
+    background-color:rgba(0, 61, 100, 0.85);
+    border-radius: 10%;
+    color:white;
+}
+.button:disabled{    
+    padding:5px;
+    background-color:rgba(0, 61, 100, 0.10);
+    border-radius: 10%;
+    color:lightgray;
+}
+.btn{
+    text-decoration: none;
+    color:white;
+    display:inline-block;
+    margin:10px;
+}
+.btn-full:link,
+.btn-full:visited{
+    text-decoration: none;
+    padding:5px;
+}
+.btn-full:hover,
+.btn-full:active{
+    text-decoration: none;
+    background-color:rgba(0, 61, 100, 0.85);
+    border-radius: 10%;
+    padding:5px;
+}
+
+.test-section{
+    color:rgb(5, 5, 5);
+    height: 100vh;
+    background-color: rgba(242, 246, 255, 0.17);
+}
+
+
+.correctAnsCount{
+    margin-right:20px;
+}
+
+.wrongAnsCount{
+    margin-right:20px;
+}
+
+.box{
+    width:100%;
+}
+.box h1{
+    text-align: center;
+}
+
+.introLabel{
+    display: inline-block;
+    font-weight: 400;
+}
+
+.js--wp-1,
+.js--wp-2{
+    opacity:0;
+    -webkit-animation-duration:1s;
+    animation-duration:1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated{
+    opacity: 1;
+}
+
+.questionFormArea{
+    font-weight: 400;
+}
+
+.rectangleBox{
+    padding:25px;
+}
