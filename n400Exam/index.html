@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">     
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">  
+        <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/queries.css">  
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">         
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <title>U.S.A</title>    
+	</head>
+	<body>
+        <header>
+            <nav>
+                <div class="row">
+                </div>
+            </nav>            
+            <div class="welcome-screen">
+                <h1>W E L C O M E</h1>
+                <a class="btn btn-full" href="https://www.uscis.gov/sites/default/files/USCIS/Office%20of%20Citizenship/Citizenship%20Resource%20Center%20Site/Publications/100q.pdf" target="_blank">Prepare</a><br>
+                <a class="btn btn-full js--scroll-to-test" href="#test-section">Start Test</a>
+            </div>            
+        </header>
+        
+        <section class="test-section js--section-test" id="test-section">
+            
+            <div class="row">
+                <div class="col span-1-of-1 box">
+                    <h1>USA Citizenship exam challenge</h1>
+                    <h4 class="introLabel">You will be asked&nbsp;<select id="numOfQs" name="numOfQs"></select>&nbsp;number of questions.</h4>
+                    <button id="btnStartTest" type="button" onclick="init()" class="button">Start the test</button>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col span-2-of-3">                    
+                    <form id="questionForm" class="questionFormArea"> 
+                        <label id="lblTopMsg" style="margin:15%;font-weight:bold;font-size: 150%;"></label>
+                        <div id="usaFlag" class="js--wp-1">
+                            <br>
+                            <img src="resources/img/LargeUSFlag.gif" alt="flag" style="margin-left:150px;">
+                        </div>
+                        <img id="resultImg" src="" alt="" height="200" width="250" style="margin-left:10%;" >
+                        <div id="formDiv" style="display:none;" >
+                        <div>
+                            <div class="correctAnsCount" style="display:inline;"><img src="resources/img/happy.ico" alt="correct" height="40"></div>
+                            <div class="correctAnsCount" id="correct-0" style="display:inline;">0</div>
+                            <div class="wrongAnsCount" style="display:inline;"><img src="resources/img/sad.ico" alt="wrong" height="40"></div>
+                            <div class="wrongAnsCount" id="wrong-0" style="display:inline;">0</div>
+                        </div>
+                        <br>
+                        <label id="question"></label>
+                        <br><br>
+                        <div id="showChoices">
+                        <div id="rectangleBox" class="rectangleBox">
+                            <input id="ans1" type="radio" name="answer" value="0">&nbsp;<label for="ans1"><span id="option1">Option 1</span></label><br>
+                            <input id="ans2" type="radio" name="answer" value="1">&nbsp;<label for="ans2"><span id="option2">Option 2</span></label><br>
+                            <input id="ans3" type="radio" name="answer" value="2">&nbsp;<label for="ans3"><span id="option3">Option 3</span></label><br>
+                        </div>
+                        <button id="btnSubmit" type="button" onclick="gotItRight()" class="button">Submit</button>
+                        <button id="btnNxt" type="button" onclick="getQuestion()" class="button">Next</button>
+                        </div>
+                        <button id="btnShowChoices" type="button" onclick="showChoices()" class="button">Show Choices</button>                        
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="col span-1-of-3">
+                    <div id="uncleSamStuff" class="js--wp-2">
+                        <img src="resources/img/uncleSam.png" alt="Uncle_Sam" height="225" width="225"><br>
+                        <label id="message" style="font-family:fantasy;" width="50px">Are you up for a challenge?</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>   
+    <script src="resources/js/questions.js"></script>
+    <script src="resources/js/script.js"></script>   
+    
+	</body>
+</html>
