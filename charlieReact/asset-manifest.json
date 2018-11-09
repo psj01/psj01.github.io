@@ -1,13 +1,15 @@
 {
-  "main.css": "/charlieReact/static/css/main.396148f8.chunk.css",
-  "main.js": "/charlieReact/static/js/main.54eb082a.chunk.js",
-  "main.js.map": "/charlieReact/static/js/main.54eb082a.chunk.js.map",
-  "static/js/1.d390a7e1.chunk.js": "/charlieReact/static/js/1.d390a7e1.chunk.js",
-  "static/js/1.d390a7e1.chunk.js.map": "/charlieReact/static/js/1.d390a7e1.chunk.js.map",
+  "main.css": "/charlieReact/static/css/main.1aaeeffc.chunk.css",
+  "main.js": "/charlieReact/static/js/main.c52b9a25.chunk.js",
+  "main.js.map": "/charlieReact/static/js/main.c52b9a25.chunk.js.map",
+  "static/js/1.2250a694.chunk.js": "/charlieReact/static/js/1.2250a694.chunk.js",
+  "static/js/1.2250a694.chunk.js.map": "/charlieReact/static/js/1.2250a694.chunk.js.map",
   "runtime~main.js": "/charlieReact/static/js/runtime~main.141b5f0c.js",
   "runtime~main.js.map": "/charlieReact/static/js/runtime~main.141b5f0c.js.map",
-  "static/css/main.396148f8.chunk.css.map": "/charlieReact/static/css/main.396148f8.chunk.css.map",
+  "static/css/main.1aaeeffc.chunk.css.map": "/charlieReact/static/css/main.1aaeeffc.chunk.css.map",
+  "static/media/charlie1.jpg": "/charlieReact/static/media/charlie1.4fae004f.jpg",
+  "static/media/charlie2.jpg": "/charlieReact/static/media/charlie2.0e5f3ba2.jpg",
   "index.html": "/charlieReact/index.html",
-  "precache-manifest.931f9006160198a34ea549b1de3dd2d0.js": "/charlieReact/precache-manifest.931f9006160198a34ea549b1de3dd2d0.js",
+  "precache-manifest.dafdf5c09f9bbde87052abbe7eaa0a7e.js": "/charlieReact/precache-manifest.dafdf5c09f9bbde87052abbe7eaa0a7e.js",
   "service-worker.js": "/charlieReact/service-worker.js"
 }
