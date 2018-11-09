@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/charlieReact/static/js/runtime~main.141b5f0c.js"
   },
   {
-    "revision": "472d4e43c353d002131f",
-    "url": "/charlieReact/static/js/main.472d4e43.chunk.js"
+    "revision": "54eb082a9949e77e7412",
+    "url": "/charlieReact/static/js/main.54eb082a.chunk.js"
   },
   {
     "revision": "d390a7e15b6114422e4c",
     "url": "/charlieReact/static/js/1.d390a7e1.chunk.js"
   },
   {
-    "revision": "472d4e43c353d002131f",
+    "revision": "54eb082a9949e77e7412",
     "url": "/charlieReact/static/css/main.396148f8.chunk.css"
   },
   {
-    "revision": "ade557251bab33f775ede1bb83b7de5e",
+    "revision": "30b581ccad00f2786a38bc07d4834823",
     "url": "/charlieReact/index.html"
   }
 ];
