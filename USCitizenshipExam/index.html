@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/CustomButtons.css" />
+  </head>
+  <body>
+    <div class="text-center">
+      <h1 class="display-4">
+        <img src="images/flag.png" class="flag" alt="usa-flag" />
+      </h1>
+      <p>So Much to Learn, So Little Time</p>
+      <a href="index.html">Home</a> |
+      <a href="prepare.html">Prepare</a>
+    </div>
+
+    <hr />
+
+    <button class="button3" id="btnStartTest" type="button" onclick="init()">
+      Reset
+    </button>
+    <h1>United States Citizenship Exam Challenge</h1>
+    Number of questions:&nbsp;<select
+      id="numOfQs"
+      name="numOfQs"
+      onchange="validateddlSelection()"
+    ></select>
+    <div class="row">
+      <div class="col span-2-of-3">
+        <div id="loading" style="color:darkorange;">Loading...</div>
+        <div id="formDiv" style="display:none;">
+          <div>
+            <div style="display:inline;">
+              ✅
+            </div>
+            <div id="correct-0" style="display:inline;">0</div>
+            <div style="display:inline;">
+              ❌
+            </div>
+            <div id="wrong-0" style="display:inline;">0</div>
+          </div>
+          <br />
+          <label id="question"></label>
+          <br />
+          <div id="showChoices">
+            <div id="rectangleBox">
+              <input
+                id="ans1"
+                type="radio"
+                name="answer"
+                value="0"
+              />&nbsp;<label for="ans1"
+                ><span id="option1">Option 1</span></label
+              ><br />
+              <input
+                id="ans2"
+                type="radio"
+                name="answer"
+                value="1"
+              />&nbsp;<label for="ans2"
+                ><span id="option2">Option 2</span></label
+              ><br />
+              <input
+                id="ans3"
+                type="radio"
+                name="answer"
+                value="2"
+              />&nbsp;<label for="ans3"
+                ><span id="option3">Option 3</span></label
+              ><br />
+            </div>
+            <button
+              id="btnSubmit"
+              type="button"
+              onclick="gotItRight()"
+              class="button1"
+            >
+              Submit
+            </button>
+            <button
+              id="btnNxt"
+              type="button"
+              onclick="getQuestion()"
+              class="button2"
+            >
+              Next
+            </button>
+          </div>
+          <button
+            id="btnShowChoices"
+            type="button"
+            onclick="showChoices()"
+            class="button5"
+          >
+            Show Choices
+          </button>
+        </div>
+        <label id="lblTopMsg"></label>
+        <label id="message">Are you up for a challenge?</label>
+      </div>
+    </div>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/axios/axios.min.js"></script>
+    <script src="js/loadQuestions.js"></script>
+    <script src="js/myScript.js"></script>
+  </body>
+</html>
