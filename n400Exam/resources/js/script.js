@@ -44,7 +44,14 @@ $(document).ready(function(){
 });
 
 
-
+function DisableOptions(){
+    if(askedQuestions.length >= 10)
+    {
+        for(var i = 0;i<(askedQuestions.length - 10);i++){
+            document.getElementById('numOfQs').options[i].disabled = true;
+        }
+    }
+}
 
 function load_numOfQs_DDL(){
 var select = document.getElementById('numOfQs');
@@ -124,6 +131,7 @@ function getQuestion()
     
     document.getElementById("showChoices").style.display = "none";
     document.getElementById("btnShowChoices").style.display = "block";
+    DisableOptions();
     
 }
 
