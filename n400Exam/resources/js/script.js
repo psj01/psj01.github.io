@@ -79,6 +79,7 @@ function init()
     document.getElementById('rectangleBox').style.border = "none"; 
     document.getElementById('resultImg').style.src = "";     
     document.getElementById('resultImg').style.display = "none";
+    $("#numOfQs option").prop("disabled", false);
     getQuestion();
 }
 
