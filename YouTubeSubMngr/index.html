@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Subscription Manager</title>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <h1><span style="color:red;">Youtube</span> Subscription Manager xml parser</h1>
+        <code>see the full list of your youtube subscriptions</code>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <div style="background-color:wheat;padding:5px;">
+                        <input type="file" id="upload" accept="application/xml" />
+                        <button id="btnGo" style="height:50px;width:50px;cursor:pointer;"
+                            onclick="readFileAsString()">Go</button>
+                    </div>
+                    <code>Click <a href='/sample.xml' target="_blank">here</a> to see a sample xml.</code>
+                </td>
+                <td>
+                    <ul>
+                        <li>Step 1: Go to <a href="https://www.youtube.com/subscription_manager" target="_blank">youtube
+                                subscription manager</a></li>
+                        <li>Step 2: Scroll down all the way and click the Export subscriptions option.</li>
+                        <li>Step 3: Upload the downloaded xml file.</li>
+                        <li>Step 4: Click "Go".</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <table id="YT_channels">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Channel Name</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+        </tbody>
+    </table>
+
+    <script>
+
+        function readFileAsString() {
+            var files = document.getElementById("upload").files;
+            if (files.length === 0) {
+                alert('No file is selected');
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                doParse(event.target.result);
+                return;
+            };
+            reader.readAsText(files[0]);
+        }
+
+        function resetTable() {
+            var tbody = document.getElementById("result");
+            tbody.innerHTML = "";
+        }
+        function addNewRow(i, x, y) {
+            var tableRef = document.getElementById('result');
+            // Insert a row in the table at row index 0
+            var newRow = tableRef.insertRow(tableRef.rows.length);
+
+            // Insert a cell in the row at index 0
+            var cellNum = newRow.insertCell(0);
+            // Insert a cell in the row at index 1
+            var cellCName = newRow.insertCell(1);
+            // Insert a cell in the row at index 2
+            var cellCLink = newRow.insertCell(2);
+            // Append a text node to the cell
+            var cellNumVal = document.createTextNode(i)
+            var cellCNameVal = document.createTextNode(x)
+            var cellCLinkVal = document.createElement("a");
+            cellCLinkVal.href = "https://www.youtube.com/channel/" + y;
+            cellCLinkVal.text = "Link";
+            cellCLinkVal.target = "_blank";
+            cellNum.appendChild(cellNumVal);
+            cellCName.appendChild(cellCNameVal);
+            cellCLink.appendChild(cellCLinkVal);
+
+        }
+        function doParse(xmlString) {
+            resetTable();
+
+            let parser = new DOMParser();
+            let xmlData = xmlString.replace(/&/g, '&#38;');
+            xmlData = "<xml>" + xmlData + "</xml>";
+            let doc = parser.parseFromString(xmlData, 'application/xml');
+            let x = doc.getElementsByTagName('outline');
+            if (x.length > 0) {
+                for (let i = 0; i < x.length; i++) {
+                    let channelName = x[i].getAttribute("title");
+                    let channelid = "";
+                    let xmlURL = x[i].getAttribute("xmlUrl");
+                    try {
+                        channelid = GetChannelID(xmlURL)
+                    } catch (err) {
+                        continue;
+                    }
+                    addNewRow(i, channelName, channelid);
+                }
+            } else {
+                alert("Ouch... that didn't work. Please make sure the xml is formatted correctly.")
+            }
+        }
+
+        function GetChannelID(x) {
+            let str = x;
+            let result = str.split('channel_id=');
+            return result[1];
+        }
+
+        function GetChannelName(x) {
+            let str = x;
+            let result = str.split('channel_id=');
+        }
+
+    </script>
+
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        #btnGo:hover {
+            background-color: #4CAF50;
+        }
+
+        #YT_channels {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        #YT_channels td,
+        #YT_channels th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #YT_channels tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #YT_channels tr:hover {
+            background-color: #ddd;
+        }
+
+        #YT_channels th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</body>
+
+</html>

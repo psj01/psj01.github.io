@@ -1,0 +1,19 @@
+<opml version="1.1">
+    <body>
+        <outline text="YouTube Subscriptions" title="YouTube Subscriptions"><outline text="PhilipSoloTV" title="PhilipSoloTV" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5_do3JQAPHA1rIlM-2iS6g"/>
+            <outline text="SmarterEveryDay" title="SmarterEveryDay" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6107grRI4m0o2-emgoDnAA"/>
+            <outline text="TheHodgetwins" title="TheHodgetwins" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC69y0hZJEiF_drrxE50VLTQ"/>
+            <outline text="ProZD" title="ProZD" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6MFZAOHXlKK1FI7V0XQVeA"/>
+            <outline text="My Tales of Whisky Official" title="My Tales of Whisky Official" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6Ull8Fi62GSm7gJs4AdbvQ"/>
+            <outline text="Hodgetwins Vlogs" title="Hodgetwins Vlogs" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7FP6UyeIEiqvrvpw8nFRnw"/>
+            <outline text="VANCITY VANLIFE" title="VANCITY VANLIFE" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC85rJiWmYQV8Shk3QWXT8MQ"/>
+            <outline text="Lil Dicky" title="Lil Dicky" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8rVJyj4zE0S9-sccMLifIA"/>
+            <outline text="Robert Wallace" title="Robert Wallace" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8zkfIlx-pRxjO6Dpx7NXOQ"/>
+            <outline text="Flo Lum" title="Flo Lum" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9c1J3W3L8zRSk9lysRdB3w"/>
+            <outline text="Tim Watson" title="Tim Watson" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz9oaOU0R02JOB7u8gM7U1w"/>
+            <outline text="Jaka Parker" title="Jaka Parker" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzvCf_q10UZkUJE0lOav0ag"/>
+            <outline text="Steve Sherron" title="Steve Sherron" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzwkdb9w47TR2pY99GwXf1Q"/>
+            <outline text="We're the Russos" title="We're the Russos" type="rss" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzzfu83LhPMMuhtDVA75rfw"/>
+        </outline>
+    </body>
+</opml>
