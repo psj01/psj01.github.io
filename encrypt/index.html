@@ -1,37 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Text Encrypt/Decrypt</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 30px;
+      margin: 20px;
+      padding: 0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    textarea {
+
+    h2 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    textarea, input {
       width: 100%;
-      max-width: 600px;
+      padding: 10px;
+      font-size: 1rem;
+      box-sizing: border-box;
     }
-    input, textarea, button {
-      margin-top: 10px;
+
+    button {
+      padding: 12px;
+      margin: 10px 5px 0 0;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 48%;
+      max-width: 200px;
     }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
     #output {
       background-color: #f0f0f0;
+    }
+
+    p.note {
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    @media (max-width: 500px) {
+      button {
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <h2>🔐 Encrypt / Decrypt Text</h2>
 
-  <textarea id="text" rows="6" placeholder="Enter your text or encrypted data here..."></textarea><br>
-  <p style="font-size:x-small;">by default encryption uses the password is password please change for security.</p>
-  <input type="text" id="password" value="password"><br>
+  <textarea id="text" rows="6" placeholder="Enter your text or encrypted data here..."></textarea>
+  <p class="note">By default, encryption uses the password <strong>"password"</strong>. Please change for security.</p>
+  <input type="text" id="password" value="password" placeholder="Enter password" />
 
-  <button onclick="encryptText()">Encrypt</button>
-  <button onclick="decryptText()">Decrypt</button><br><br>
+  <div class="button-row">
+    <button onclick="encryptText()">Encrypt</button>
+    <button onclick="decryptText()">Decrypt</button>
+  </div>
 
   <h3>Output:</h3>
-  <textarea id="output" rows="6" readonly placeholder="Result will appear here..." onclick="selectText(this)"></textarea><br>
+  <textarea id="output" rows="6" readonly placeholder="Result will appear here..." onclick="selectText(this)"></textarea>
   <button onclick="copyOutput()">📋 Copy Output</button>
 
   <script>
