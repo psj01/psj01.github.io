@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Channels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .input-container {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      padding: 15px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .input-container textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+
+    .input-container input[type="file"] {
+      margin: 10px 0;
+    }
+
+    .input-container button {
+      padding: 10px 15px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .input-container button:hover {
+      background: #3b7bc0;
+    }
+
+    .search-box {
+      max-width: 400px;
+      margin: 0 auto 20px auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+    }
+
+    th {
+      background: #4a90e2;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background: #f2f6fc;
+    }
+
+    tr:hover {
+      background: #e9f1fb;
+    }
+
+    a {
+      color: #2a6edc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      th, td {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Channels</h1>
+
+  <div class="instructions" style="
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  background: #fff7e6;
+  border: 1px solid #f5d88c;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+">
+  <h2 style="margin-top:0;">How to Get Your YouTube Subscriptions File</h2>
+  <ol style="padding-left: 20px;">
+    <li>Go to <a href="https://takeout.google.com/takeout/custom/youtube" target="_blank">Google Takeout</a> and make sure you’re logged into the correct Google/YouTube account.</li>
+    <li>Under <b>Create a new export</b>, choose <b>YouTube and YouTube Music</b>.</li>
+    <li>Click <b>All YouTube data included</b> and select only <b>Subscriptions</b>.</li>
+    <li>Click <b>Next step</b>, choose <b>Export once</b>, then click <b>Create export</b>.</li>
+    <li>Wait for the export to finish, then download the archive.</li>
+    <li>Extract the archive and find the file named <b>subscriptions.csv</b>.</li>
+    <li>Upload that file below to see your subscriptions.</li>
+  </ol>
+</div>
+
+<div style="max-width:800px; margin:20px auto;">
+  <details>
+    <summary style="
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      padding:8px 12px;
+      background:#f0f4fa;
+      border:1px solid #ccc;
+      border-radius:6px;
+    ">
+      Show Sample Subscriptions CSV
+    </summary>
+    <div style="margin-top:10px;">
+      <pre style="
+        background:#f7f9fc;
+        border:1px solid #ccc;
+        padding:12px;
+        border-radius:6px;
+        overflow-x:auto;
+        font-size:14px;
+      ">
+Channel Id,Channel Url,Channel Title
+UC-91UA-Xy2Cvb98deRXuggA,http://www.youtube.com/channel/UC-91UA-Xy2Cvb98deRXuggA,Joshua Fluke
+UC-BRiyoRjfLZVp-bBtu2iNg,http://www.youtube.com/channel/UC-BRiyoRjfLZVp-bBtu2iNg,Farbod
+UC_x5XG1OV2P6uZZ5FSM9Ttw,http://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw,Google Developers
+UCBR8-60-B28hp2BmDPdntcQ,http://www.youtube.com/channel/UCBR8-60-B28hp2BmDPdntcQ,YouTube
+      </pre>
+    </div>
+  </details>
+</div>
+
+
+
+
+  <div class="input-container">
+    <label><b>Paste CSV data:</b></label>
+    <textarea id="csvInput" placeholder="Paste your CSV here..."></textarea>
+    <div>
+      <label><b>Or upload CSV file:</b></label>
+      <input type="file" id="csvFile" accept=".csv" >
+
+
+    </div>
+    <button onclick="loadData()">Load Data</button>
+  </div>
+
+  <div class="search-box" style="display:none;">
+    <input type="text" id="searchInput" placeholder="Search channels...">
+  </div>
+
+  <div class="table-container" style="display:none;">
+    <table id="channelTable">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+
+
+document.getElementById("csvFile").addEventListener("change", function () {
+  if (this.files.length > 0) {
+    const file = this.files[0];
+    if (!file.name.endsWith(".csv")) {
+      alert("Only .csv files are allowed");
+      this.value = ""; // reset input
+      return;
+    }
+
+    // Call your method
+    handleCSVFile(file);
+  }
+});
+
+function handleCSVFile(file) {
+    const textarea = document.getElementById("csvInput");
+textarea.value = ""; // clear old content first
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const text = e.target.result;
+    const rows = parseCSV(text);  // use your parser function
+   // buildTable(rows);             // your existing method to build the table
+   rows.forEach(row => {
+
+
+  textarea.value += row + "\n";
+
+   });
+  };
+  reader.readAsText(file);
+}
+
+
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      return lines.map(line => {
+        // Split by comma but handle quoted values
+        const values = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || [];
+        return values.map(v => v.replace(/^"|"$/g, ""));
+      });
+    }
+
+    function loadData() {
+      const textareaData = document.getElementById("csvInput").value.trim();
+      const fileInput = document.getElementById("csvFile");
+      
+      if (textareaData) {
+        buildTable(parseCSV(textareaData));
+      } else if (fileInput.files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          buildTable(parseCSV(e.target.result));
+        };
+        reader.readAsText(fileInput.files[0]);
+      } else {
+        alert("Please paste CSV data or upload a file.");
+      }
+    }
+
+    function buildTable(data) {
+      if (data.length < 2) return alert("CSV must have header and at least one row.");
+
+      const table = document.getElementById("channelTable");
+      const thead = table.querySelector("thead");
+      const tbody = table.querySelector("tbody");
+
+      // Clear old table
+      thead.innerHTML = "";
+      tbody.innerHTML = "";
+
+      // Build header
+      const headerRow = document.createElement("tr");
+      data[0].forEach(header => {
+        const th = document.createElement("th");
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+
+      // Build body
+      data.slice(1).forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach((cell, idx) => {
+          const td = document.createElement("td");
+          if (idx === 1 || idx === 2) {
+            // Channel URL → clickable link
+            if (cell.startsWith("http")) {
+              const a = document.createElement("a");
+              a.href = cell;
+              a.textContent = "Visit";
+              a.target = "_blank";
+              td.appendChild(a);
+            } else {
+              td.textContent = cell;
+            }
+          } else {
+            td.textContent = cell;
+          }
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      // Show search + table
+      document.querySelector(".search-box").style.display = "block";
+      document.querySelector(".table-container").style.display = "block";
+
+      // Attach search filter
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("keyup", function() {
+        const filter = this.value.toLowerCase();
+        const rows = tbody.getElementsByTagName("tr");
+        for (let i = 0; i < rows.length; i++) {
+          let rowText = rows[i].innerText.toLowerCase();
+          rows[i].style.display = rowText.includes(filter) ? "" : "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
