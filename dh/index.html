@@ -159,12 +159,29 @@
          color: #6f42c1;
          /* Purple for secret */
          }
+
+
+    .formula {
+      font-family: monospace;
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
       </style>
    </head>
    <body>
       <h2>🔐 Diffie–Hellman Key Exchange Demo
          <button id="resetBtn">RESET</button>
       </h2>
+
+  <p class="formula">
+    Public Value: A = g<sup>a</sup> mod p, B = g<sup>b</sup> mod p<br>
+    Shared Secret: s = B<sup>a</sup> mod p = A<sup>b</sup> mod p
+  </p>
+
       <div class="shared">
          <h2>Shared Inputs</h2>
          <div class="input-group">
@@ -195,6 +212,7 @@
                <h3>Alice's Computed Secret Key</h3>
                <button id="aliceSecretBtn" onclick="generateSecret('alice')" disabled>Generate Secret</button>
                <p id="aliceSecret"></p>
+               <p>Secret Key = (Bob's Public Key)<sup>Alice's Private Key</sup> mod p</p> 
             </div>
          </div>
          <div class="person" id="bobDiv">
@@ -210,6 +228,7 @@
                <h3>Bob's Computed Secret Key</h3>
                <button id="bobSecretBtn" onclick="generateSecret('bob')" disabled>Generate Secret</button>
                <p id="bobSecret"></p>
+               <p>Secret Key = (Alice's Public Key)<sup>Bob's Private Key</sup> mod p</p> 
             </div>
          </div>
       </div>
