@@ -1,9 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-#123
-ss
-ok fine
-rea
-fffdfd
-sd
-sdfs
+#1234
